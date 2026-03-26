@@ -37,6 +37,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://marvinlaubenstein.github.io/curriculum-vitae
 
     steps:
       - name: Deploy to Pages
