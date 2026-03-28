@@ -1,5 +1,5 @@
 .privacy-footer {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   text-align: center;
   border-top: 1px solid var(--border);
   background: var(--bg);
@@ -23,6 +23,31 @@
 
 .privacy-footer-legal a:hover {
   color: #f92d03;
+}
+
+.privacy-footer-legal a:focus-visible {
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+}
+
+.privacy-footer-impressum{
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  opacity: 1;
+}
+
+.privacy-footer-datenschutz:focus-visible,.privacy-footer-impressum:focus-visible {
+    outline: 2px solid #f92d03;
+    border-radius: 9999px;
+    outline-offset: 3px;
+}
+
+.privacy-footer-datenschutz{
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  opacity: 1;
 }
 
 .privacy-footer-legal a:focus-visible {
