@@ -1,14 +1,11 @@
 .privacy-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem 2rem;
-  padding-bottom: calc(1rem + 70px);
+  padding: 1rem 1rem;
   text-align: center;
   border-top: 1px solid var(--border);
   background: var(--bg);
   z-index: 998;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .privacy-footer-legal {
@@ -18,11 +15,39 @@
 .privacy-footer-legal a {
   color: var(--text);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  opacity: 1;
+  transition: color 0.2s ease;
+  border-radius: 4px;
 }
 
 .privacy-footer-legal a:hover {
   color: var(--accent);
+}
+
+.privacy-footer-legal a:focus-visible {
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+}
+
+.privacy-footer-impressum{
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  opacity: 1;
+}
+
+.privacy-footer-datenschutz:focus-visible,.privacy-footer-impressum:focus-visible {
+    outline: 2px solid #f92d03;
+    border-radius: 9999px;
+    outline-offset: 3px;
+}
+
+.privacy-footer-datenschutz{
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  opacity: 1;
 }
 
 .privacy-footer-divider {
@@ -30,10 +55,20 @@
   color: var(--border);
 }
 
-.privacy-footer-copyright {
-  font-size: 0.75rem;
-  color: var(--text);
-  opacity: 0.7;
+.privacy-footer-legal-content a {
+  color: #f92d03;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.privacy-footer-legal-content a:hover {
+  color: #e01f00;
+}
+
+.privacy-footer-legal-content a:focus-visible {
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* Modal Styles */
@@ -41,12 +76,18 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(100, 100, 100, 0.5);
   z-index: 1000;
   justify-content: center;
   align-items: flex-start;
   overflow-y: auto;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .privacy-footer-modal-overlay {
+    padding: 1rem 1rem;
+  }
 }
 
 .privacy-footer-modal-overlay:target {
@@ -55,13 +96,14 @@
 
 .privacy-footer-modal {
   position: relative;
-  background: var(--bg);
+  background: #fff;
   border-radius: 8px;
   padding: 2rem;
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   color: var(--text);
+  margin-top: 2rem;
 }
 
 .privacy-footer-modal-close {
@@ -69,13 +111,35 @@
   top: 1rem;
   right: 1.5rem;
   font-size: 1.5rem;
-  color: var(--text);
-  text-decoration: none;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .privacy-footer-modal-close:hover {
-  color: var(--text-h);
+  color: #f92d03;
+  transform: scale(1.1);
+}
+
+.privacy-footer-modal-close:active {
+  transform: scale(0.95);
+}
+
+.privacy-footer-modal-close:focus-visible {
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+ 
+}
+
+.privacy-footer-modal-title{
+  color:#f92d03
 }
 
 .privacy-footer-modal h2 {
@@ -86,7 +150,7 @@
 .privacy-footer-legal-content h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-h);
+  color:#f92d03;
   margin: 1.5rem 0 0.75rem;
 }
 
@@ -104,13 +168,4 @@
 .privacy-footer-legal-content p {
   margin-bottom: 0.75rem;
   line-height: 1.6;
-}
-
-.privacy-footer-legal-content a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.privacy-footer-legal-content a:hover {
-  text-decoration: underline;
 }

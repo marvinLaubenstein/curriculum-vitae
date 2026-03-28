@@ -5,9 +5,14 @@
   right: 0;
   background: var(--bg);
   border-top: 1px solid var(--border);
-  padding: 1.25rem 1.5rem;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
   z-index: 999;
   animation: cookieSlideUp 0.4s ease-out;
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 @keyframes cookieSlideUp {
@@ -32,11 +37,15 @@
 }
 
 .cookie-popup-text {
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
   color: var(--text);
   margin: 0;
   flex: 1;
   min-width: 200px;
+  
+  @media (max-width: 480px) {
+    min-width: 150px;
+  }
 }
 
 .cookie-popup-actions {
@@ -46,12 +55,13 @@
 }
 
 .cookie-popup-btn {
-  padding: 0.5rem 1rem;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem);
   cursor: pointer;
   transition: all 0.2s ease;
   border: 1px solid var(--border);
+  white-space: nowrap;
 }
 
 .cookie-popup-btn-accept {
