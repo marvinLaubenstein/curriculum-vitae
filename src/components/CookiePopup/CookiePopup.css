@@ -3,11 +3,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-primary);
-  padding: var(--padding-popup-y) var(--padding-popup-x);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
   z-index: 999;
-  animation: cookieSlideUp var(--transition-smooth);
+  animation: cookieSlideUp 0.4s ease-out;
   
   @media (orientation: landscape) and (max-height: 500px) {
     padding: 0.5rem 1rem;
@@ -37,8 +37,8 @@
 }
 
 .cookie-popup-text {
-  font-size: var(--font-size-lg);
-  color: var(--color-text);
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
+  color: var(--text);
   margin: 0;
   flex: 1;
   min-width: 200px;
@@ -55,12 +55,12 @@
 }
 
 .cookie-popup-btn {
-  padding: var(--padding-btn-y) var(--padding-btn-x);
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-xl);
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
+  border-radius: 4px;
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem);
   cursor: pointer;
-  transition: all var(--transition-fast);
-  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
   white-space: nowrap;
 }
 

@@ -6,31 +6,31 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   font-family: inherit;
 }
 
 /* Close button variant */
 .button--close {
-  width: var(--size-btn-close);
-  height: var(--size-btn-close);
+  width: 36px;
+  height: 36px;
   font-size: 24px;
-  color: var(--color-black);
-  line-height: var(--line-height-tight);
-  border-radius: var(--radius-full);
-  outline: var(--shadow-outline) var(--color-black);
-  outline-offset: var(--shadow-outline-offset);
+  color: #000000;
+  line-height: 1;
+  border-radius: 9999px;
+  outline: 2px solid #000;
+  outline-offset: 3px;
 }
 
 .button--close:hover {
-  color: var(--color-primary);
-  outline: var(--shadow-outline) var(--color-primary);
+  color: #f92d03;
+  outline: 2px solid #f92d03;
 }
 
 .button--close:focus-visible {
-  outline: var(--shadow-outline) var(--color-primary);
-  outline-offset: var(--shadow-outline-offset);
-  border-radius: var(--radius-full);
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+  border-radius: 9999px;
 }
 
 .button--close:active {
@@ -39,22 +39,22 @@
 
 /* Social button variant */
 .button--social {
-  width: var(--size-btn-social);
-  height: var(--size-btn-social);
-  border: 1px solid var(--color-gray-light);
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e3e3e3;
   border-radius: 50%;
-  color: var(--color-black);
+  color: #000000;
 }
 
 .button--social:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: #f92d03;
+  color: #f92d03;
   transform: translateY(-2px);
 }
 
 .button--social:focus-visible {
-  outline: var(--shadow-outline) var(--color-primary);
-  outline-offset: var(--shadow-outline-offset);
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
 }
 
 .button--social:active {
@@ -63,25 +63,25 @@
 
 /* Primary button variant */
 .button--primary {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-sm);
-  background: var(--color-primary);
-  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border: 1px solid #f92d03;
+  border-radius: 4px;
+  background: #f92d03;
+  color: #ffffff;
   font-size: 0.875rem;
   font-weight: 500;
 }
 
 .button--primary:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  background: #e01f00;
+  border-color: #e01f00;
 }
 
 .button--primary:focus-visible {
-  outline: var(--shadow-outline) var(--color-primary);
-  outline-offset: var(--shadow-outline-offset);
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+  background: #e01f00;
+  border-color: #e01f00;
 }
 
 .button--primary:active {

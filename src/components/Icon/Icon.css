@@ -2,26 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-icon-btn);
-  height: var(--size-icon-btn);
+  width: 56px;
+  height: 56px;
   padding: 0;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-black);
-  transition: opacity var(--transition-fast);
+  color: #000000;
+  transition: opacity 0.2s ease;
 }
 
 .wip-icon-btn:hover {
   opacity: 0.8;
-  color: var(--color-primary);
+  color: #f92d03;
 }
 
 .wip-icon-btn:focus-visible {
-  color: var(--color-primary);
-  outline: var(--shadow-outline) var(--color-primary);
-  outline-offset: var(--shadow-outline-offset-lg);
-  border-radius: var(--radius-full);
+  color: #f92d03;
+  outline: 2px solid #f92d03;
+  outline-offset: 5px;
+  border-radius: 9999px;
 }
 
 .wip-icon-btn:active {
