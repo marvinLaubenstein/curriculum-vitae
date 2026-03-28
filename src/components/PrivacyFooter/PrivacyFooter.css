@@ -1,5 +1,5 @@
 .privacy-footer {
-  padding: 1rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
   border-top: 1px solid var(--border);
   background: var(--bg);
@@ -22,7 +22,7 @@
 }
 
 .privacy-footer-legal a:hover {
-  color: var(--accent);
+  color: #f92d03;
 }
 
 .privacy-footer-legal a:focus-visible {
