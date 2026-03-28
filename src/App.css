@@ -3,70 +3,76 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 2rem;
-  background: #ffffff;
+  background: var(--color-bg);
 }
 
 .wip-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
   text-align: center;
   max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .wip-label {
-  font-size: 12px;
-  letter-spacing: 3px;
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-md);
   text-transform: uppercase;
-  color: #f92d03;
-  margin-bottom: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .wip-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .wip-icon {
-  color: #000000;
+  color: var(--color-black);
 }
 
 .wip-title {
-  font-size: clamp(48px, 12vw, 80px);
-  letter-spacing: 2px;
-  color: #000000;
-  line-height: 1;
+  font-size: var(--font-size-hero);
+  letter-spacing: var(--letter-spacing-sm);
+  color: var(--color-black);
+  line-height: var(--line-height-tight);
   margin: 0;
   text-transform: uppercase;
 }
 
 .wip-subtitle {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: #404040;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-text);
 }
 
 .wip-progress {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-2xl);
 }
 
 .wip-progress-track {
   width: 160px;
   height: 2px;
-  background: #e3e3e3;
+  background: var(--color-gray-light);
   overflow: hidden;
 }
 
 .wip-progress-bar {
   height: 100%;
   width: 40%;
-  background: linear-gradient(90deg, #f92d03, #ff6b35);
+  background: var(--color-primary-gradient);
   animation: progress-slide 1.8s ease-in-out infinite;
   will-change: transform, width;
   backface-visibility: hidden;
@@ -88,9 +94,9 @@
 }
 
 .wip-contact {
-  font-size: 14px;
-  color: #404040;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
 }
 
 .wip-email-btn {

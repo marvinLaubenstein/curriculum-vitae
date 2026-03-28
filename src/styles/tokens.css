@@ -1,0 +1,74 @@
+/* Design Tokens - Color Palette */
+:root {
+  /* Primary Colors */
+  --color-primary: #f92d03;
+  --color-primary-dark: #e01f00;
+  --color-primary-gradient: linear-gradient(90deg, #f92d03, #ff6b35);
+
+  /* Neutral Colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-dark: #404040;
+  --color-gray-light: #e3e3e3;
+  --color-gray-overlay: rgba(100, 100, 100, 0.5);
+
+  /* Semantic Colors */
+  --color-text: #404040;
+  --color-border: #e3e3e3;
+  --color-bg: #ffffff;
+  --color-accent: #f92d03;
+
+  /* Font Family */
+  --font-family-primary: 'Bebas Neue', sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  /* Spacing - Padding */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+
+  /* Spacing - Responsive Clamp */
+  --padding-popup-y: clamp(0.75rem, 2vw, 1.25rem);
+  --padding-popup-x: clamp(1rem, 3vw, 1.5rem);
+  --padding-btn-y: clamp(0.4rem, 1vw, 0.5rem);
+  --padding-btn-x: clamp(0.75rem, 2vw, 1rem);
+
+  /* Font Sizes - Responsive */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: clamp(0.8rem, 2vw, 0.875rem);
+  --font-size-xl: clamp(0.8rem, 1.5vw, 0.875rem);
+  --font-size-hero: clamp(48px, 12vw, 80px);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s ease;
+  --transition-smooth: 0.4s ease-out;
+
+  /* Line Heights */
+  --line-height-tight: 1;
+  --line-height-normal: 1.7;
+
+  /* Letter Spacing */
+  --letter-spacing-sm: 2px;
+  --letter-spacing-md: 3px;
+
+  /* Sizes */
+  --size-btn-close: 36px;
+  --size-btn-social: 44px;
+  --size-icon-btn: 56px;
+
+  /* Shadows */
+  --shadow-outline-offset: 3px;
+  --shadow-outline-offset-lg: 5px;
+  --shadow-outline: 2px solid;
+}
