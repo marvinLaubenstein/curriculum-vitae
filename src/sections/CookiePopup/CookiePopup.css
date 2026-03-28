@@ -1,20 +1,11 @@
-.cookie-popup {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #ffffff;
-  border-top: 1px solid #e3e3e3;
-  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
-  z-index: 999;
-  animation: cookieSlideUp 0.4s ease-out;
-  
-  @media (orientation: landscape) and (max-height: 500px) {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-}
+/* ============================================
+   Cookie Popup Component Styles
+   ============================================ */
 
+/* --------------------------------------------
+   Keyframes
+   Slide-up animation for popup entry
+   -------------------------------------------- */
 @keyframes cookieSlideUp {
   from {
     transform: translateY(100%);
@@ -26,6 +17,32 @@
   }
 }
 
+/* --------------------------------------------
+   Popup Container
+   Fixed at bottom of viewport
+   -------------------------------------------- */
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e3e3e3;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
+  z-index: 999;
+  animation: cookieSlideUp 0.4s ease-out;
+
+  /* Compact layout for landscape mobile */
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* --------------------------------------------
+   Popup Content
+   Flex container with text and actions
+   -------------------------------------------- */
 .cookie-popup-content {
   max-width: 800px;
   margin: 0 auto;
@@ -36,24 +53,34 @@
   flex-wrap: wrap;
 }
 
+/* --------------------------------------------
+   Popup Text
+   -------------------------------------------- */
 .cookie-popup-text {
   font-size: clamp(0.8rem, 2vw, 0.875rem);
   color: #404040;
   margin: 0;
   flex: 1;
   min-width: 200px;
-  
+
   @media (max-width: 480px) {
     min-width: 150px;
   }
 }
 
+/* --------------------------------------------
+   Popup Actions
+   Button container
+   -------------------------------------------- */
 .cookie-popup-actions {
   display: flex;
   gap: 0.75rem;
   flex-shrink: 0;
 }
 
+/* --------------------------------------------
+   Base Button Styles
+   -------------------------------------------- */
 .cookie-popup-btn {
   padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
   border-radius: 4px;
@@ -64,16 +91,18 @@
   white-space: nowrap;
 }
 
+/* Accept button variant */
 .cookie-popup-btn-accept {
-  background: #f92d03;
+  background: #87329F;
   color: #ffffff;
-  border-color: #f92d03;
+  border-color: #87329F;
 }
 
 .cookie-popup-btn-accept:hover {
   opacity: 0.9;
 }
 
+/* Decline button variant */
 .cookie-popup-btn-decline {
   background: transparent;
   color: #404040;
