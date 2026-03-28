@@ -1,70 +1,155 @@
+/* Dirtyline-inspired WIP Page */
 .wip-page {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
+  flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
+  background: #ffffff;
 }
 
 .wip-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 640px;
+}
+
+.wip-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f92d03;
+  margin-bottom: 2rem;
+}
+
+.wip-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .wip-icon {
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  animation: pulse 2s ease-in-out infinite;
+  color: #000000;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.95); }
+.wip-title {
+  font-size: clamp(48px, 12vw, 80px);
+  letter-spacing: 2px;
+  color: #000000;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .wip-subtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  color: var(--text);
+  color: #404040;
 }
 
 .wip-progress {
-  width: 200px;
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.wip-progress-track {
+  width: 160px;
+  height: 2px;
+  background: #e3e3e3;
   overflow: hidden;
 }
 
 .wip-progress-bar {
   height: 100%;
-  width: 30%;
-  background: var(--accent);
-  border-radius: 2px;
-  animation: loading 2s ease-in-out infinite;
+  width: 40%;
+  background: linear-gradient(90deg, #f92d03, #ff6b35);
+  animation: progress-slide 1.8s ease-in-out infinite;
+  will-change: transform, width;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
 }
 
-@keyframes loading {
-  0% { width: 0%; margin-left: 0; }
-  50% { width: 60%; margin-left: 20%; }
-  100% { width: 0%; margin-left: 100%; }
+@keyframes progress-slide {
+  0% {
+    transform: translateX(-100%);
+    width: 30%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    transform: translateX(350%);
+    width: 30%;
+  }
 }
 
 .wip-contact {
-  font-size: 0.9rem;
-  color: var(--text);
+  font-size: 14px;
+  color: #404040;
+  margin-bottom: 1rem;
 }
 
-.wip-contact a {
-  color: var(--accent);
+.wip-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  background: #000000;
   text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-bottom: 3rem;
 }
 
-.wip-contact a:hover {
-  text-decoration: underline;
+.wip-email-btn:hover {
+  background: #f92d03;
 }
 
-/* Footer Styles removed - now in PrivacyFooter component */
+.wip-email-btn:focus-visible {
+  outline: 2px solid #f92d03;
+  outline-offset: 3px;
+}
+
+.wip-email-btn:active {
+  transform: scale(0.98);
+}
+
+.wip-email-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.wip-divider {
+  width: 100%;
+  max-width: 400px;
+  height: 1px;
+  background: #e3e3e3;
+  margin: 0 auto 2.5rem;
+}
+
+.wip-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wip-social-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #747474;
+}
+
+.wip-social-links {
+  display: flex;
+  gap: 1rem;
+}

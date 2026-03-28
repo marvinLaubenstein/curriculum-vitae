@@ -9,4 +9,12 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] })
   ],
   base: "/",
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true
+      }
+    }
+  }
 })

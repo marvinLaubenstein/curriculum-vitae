@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+import { Button } from '../Button'
 import './PrivacyFooter.css'
 
 interface PrivacyFooterProps {
@@ -10,14 +12,88 @@ interface PrivacyFooterProps {
 
 export function PrivacyFooter({ name, street, zip, city, email }: PrivacyFooterProps) {
   const year = new Date().getFullYear()
+  const impressumModalRef = useRef<HTMLDivElement>(null)
+  const datenschutzModalRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash
+
+      if (hash === '#impressum') {
+        const focusableElements = impressumModalRef.current?.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) as NodeListOf<HTMLElement>
+        if (focusableElements?.length) {
+          focusableElements[0].focus()
+        }
+      } else if (hash === '#datenschutz') {
+        const focusableElements = datenschutzModalRef.current?.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) as NodeListOf<HTMLElement>
+        if (focusableElements?.length) {
+          focusableElements[0].focus()
+        }
+      }
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const hash = window.location.hash
+      const isImpressumOpen = hash === '#impressum'
+      const isDatenschutzOpen = hash === '#datenschutz'
+      const isModalOpen = isImpressumOpen || isDatenschutzOpen
+
+      if (!isModalOpen) return
+
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        window.location.hash = ''
+        return
+      }
+
+      if (e.key === 'Tab') {
+        const modalRef = isImpressumOpen ? impressumModalRef : datenschutzModalRef
+        const focusableElements = modalRef.current?.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) as NodeListOf<HTMLElement>
+
+        if (focusableElements.length === 0) return
+
+        const firstElement = focusableElements[0]
+        const lastElement = focusableElements[focusableElements.length - 1]
+        const activeElement = document.activeElement
+
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (activeElement === firstElement) {
+            e.preventDefault()
+            lastElement.focus()
+          }
+        } else {
+          // Tab
+          if (activeElement === lastElement) {
+            e.preventDefault()
+            firstElement.focus()
+          }
+        }
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <>
       <footer className="privacy-footer">
         <div className="privacy-footer-legal">
-          <a href="#impressum">Impressum</a>
+          <a href="#impressum" className="privacy-footer-impressum">Impressum</a>
           <span className="privacy-footer-divider">|</span>
-          <a href="#datenschutz">Datenschutzerklärung</a>
+          <a href="#datenschutz" className="privacy-footer-datenschutz">Datenschutzerklärung</a>
         </div>
         <p className="privacy-footer-copyright">
           © {year} — Alle Rechte vorbehalten
@@ -25,10 +101,10 @@ export function PrivacyFooter({ name, street, zip, city, email }: PrivacyFooterP
       </footer>
 
       {/* Impressum Modal */}
-      <div id="impressum" className="privacy-footer-modal-overlay">
+      <div ref={impressumModalRef} id="impressum" className="privacy-footer-modal-overlay" role="dialog" aria-label="Impressum">
         <div className="privacy-footer-modal">
-          <a href="#" className="privacy-footer-modal-close">&times;</a>
-          <h2>Impressum</h2>
+          <Button type="close" href="#" ariaLabel="Close Impressum Modal" className="privacy-footer-modal-close" onClick={() => window.location.hash = ''}>&times;</Button>
+          <h2 className='privacy-footer-modal-title'>Impressum</h2>
           <div className="privacy-footer-legal-content">
             <h3>Angaben gemäß § 5 TMG</h3>
             <p>
@@ -69,10 +145,10 @@ export function PrivacyFooter({ name, street, zip, city, email }: PrivacyFooterP
       </div>
 
       {/* Datenschutzerklärung Modal */}
-      <div id="datenschutz" className="privacy-footer-modal-overlay">
+      <div ref={datenschutzModalRef} id="datenschutz" className="privacy-footer-modal-overlay" role="dialog" aria-label="Datenschutzerklärung">
         <div className="privacy-footer-modal">
-          <a href="#" className="privacy-footer-modal-close">&times;</a>
-          <h2>Datenschutzerklärung</h2>
+          <Button type="close" href="#" ariaLabel="Close Datenschutz Modal" className="privacy-footer-modal-close" onClick={() => window.location.hash = ''}>&times;</Button>
+          <h2 className='privacy-footer-modal-title'>Datenschutzerklärung</h2>
           <div className="privacy-footer-legal-content">
             <h3>1. Datenschutz auf einen Blick</h3>
             <p>
