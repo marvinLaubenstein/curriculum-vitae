@@ -16,6 +16,11 @@ jobs:
 
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      VITE_NAME: ${{secrets.VITE_NAME}}
+      VITE_STREET: ${{ secrets.VITE_STREET }}
+      VITE_ZIP: ${{ secrets.VITE_ZIP }}
+      VITE_CITY: ${{ secrets.VITE_CITY }}
+      VITE_EMAIL: ${{ secrets.VITE_EMAIL }}
 
     steps:
       - name: Checkout code
