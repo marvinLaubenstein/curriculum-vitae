@@ -5,7 +5,7 @@
 /* --------------------------------------------
    Page Container
    -------------------------------------------- */
-.wip-page {
+.landing-page-wip {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -18,7 +18,7 @@
 /* --------------------------------------------
    Content Container
    -------------------------------------------- */
-.wip-content {
+.landing-page-wip-content {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -32,15 +32,16 @@
 /* --------------------------------------------
    Hero Section
    -------------------------------------------- */
-.wip-label {
-  font-size: 12px;
+.landing-page-wip-label {
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #87329F;
   margin-bottom: 2rem;
 }
 
-.wip-hero {
+.landing-page-wip-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,11 +49,11 @@
   margin-bottom: 1.5rem;
 }
 
-.wip-icon {
+.landing-page-wip-icon {
   color: #000000;
 }
 
-.wip-title {
+.landing-page-wip-title {
   font-size: clamp(48px, 12vw, 80px);
   letter-spacing: 2px;
   color: #000000;
@@ -61,7 +62,7 @@
   text-transform: uppercase;
 }
 
-.wip-subtitle {
+.landing-page-wip-subtitle {
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -71,30 +72,30 @@
 /* --------------------------------------------
    Progress Indicator
    -------------------------------------------- */
-.wip-progress {
+.landing-page-wip-progress {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
-.wip-progress-track {
+.landing-page-wip-progress-track {
   width: 160px;
   height: 2px;
   background: #e3e3e3;
   overflow: hidden;
 }
 
-.wip-progress-bar {
+.landing-page-wip-progress-bar {
   height: 100%;
   width: 40%;
-  background: linear-gradient(90deg, #87329F, #ff6b35);
-  animation: progress-slide 1.8s ease-in-out infinite;
+  background: linear-gradient(90deg, #87329F);
+  animation: landing-page-wip-progress-slide 1.8s ease-in-out infinite;
   will-change: transform, width;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
 }
 
-@keyframes progress-slide {
+@keyframes landing-page-wip-progress-slide {
   0% {
     transform: translateX(-100%);
     width: 30%;
@@ -111,13 +112,13 @@
 /* --------------------------------------------
    Contact Section
    -------------------------------------------- */
-.wip-contact {
+.landing-page-wip-contact {
   font-size: 14px;
   color: #404040;
   margin-bottom: 1rem;
 }
 
-.wip-email-btn {
+.landing-page-wip-email-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -133,20 +134,20 @@
   margin-bottom: 3rem;
 }
 
-.wip-email-btn:hover {
+.landing-page-wip-email-btn:hover {
   background: #87329F;
 }
 
-.wip-email-btn:focus-visible {
+.landing-page-wip-email-btn:focus-visible {
   outline: 2px solid #87329F;
   outline-offset: 3px;
 }
 
-.wip-email-btn:active {
+.landing-page-wip-email-btn:active {
   transform: scale(0.98);
 }
 
-.wip-email-btn svg {
+.landing-page-wip-email-btn svg {
   width: 18px;
   height: 18px;
 }
@@ -154,7 +155,7 @@
 /* --------------------------------------------
    Social Section
    -------------------------------------------- */
-.wip-divider {
+.landing-page-wip-divider {
   width: 100%;
   max-width: 400px;
   height: 1px;
@@ -162,21 +163,21 @@
   margin: 0 auto 2.5rem;
 }
 
-.wip-social {
+.landing-page-wip-social {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
-.wip-social-label {
+.landing-page-wip-social-label {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #747474;
 }
 
-.wip-social-links {
+.landing-page-wip-social-links {
   display: flex;
   gap: 1rem;
 }

@@ -1,9 +1,9 @@
 /* Design Tokens - Color Palette */
 :root {
   /* Primary Colors */
-  --color-primary: #f92d03;
+  --color-primary: #87329F;
   --color-primary-dark: #e01f00;
-  --color-primary-gradient: linear-gradient(90deg, #f92d03, #ff6b35);
+  --color-primary-gradient: linear-gradient(90deg, #87329F, #ff6b35);
 
   /* Neutral Colors */
   --color-black: #000000;
@@ -16,7 +16,7 @@
   --color-text: #404040;
   --color-border: #e3e3e3;
   --color-bg: #ffffff;
-  --color-accent: #f92d03;
+  --color-accent: #87329F;
 
   /* Font Family */
   --font-family-primary: 'Bebas Neue', sans-serif;

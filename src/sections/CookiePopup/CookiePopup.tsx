@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import './CookiePopup.css'
-import { Button } from '../Button'
+import { Button } from '../../components/Button'
 
 const COOKIE_CONSENT_KEY = 'cookie_consent'
 

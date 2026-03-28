@@ -1,0 +1,66 @@
+/* ============================================
+   Icon Button Component Styles
+   ============================================ */
+
+/* --------------------------------------------
+   Keyframes
+   Spin animation with bounce easing
+   -------------------------------------------- */
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* --------------------------------------------
+   Base Icon Button
+   -------------------------------------------- */
+.wip-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  transition: opacity 0.2s ease;
+}
+
+.wip-icon-btn:hover {
+  opacity: 0.8;
+  color: #87329F;
+}
+
+.wip-icon-btn:focus-visible {
+  color: #87329F;
+  outline: 2px solid #87329F;
+  outline-offset: 5px;
+  border-radius: 9999px;
+}
+
+.wip-icon-btn:active {
+  opacity: 0.7;
+}
+
+.wip-icon-btn svg {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+/* --------------------------------------------
+   Animation State
+   Triggers spin animation on icon click
+   -------------------------------------------- */
+.wip-icon-btn--animate svg {
+  animation: icon-spin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

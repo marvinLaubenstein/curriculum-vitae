@@ -1,3 +1,10 @@
+/* ============================================
+   Button Component Styles
+   ============================================ */
+
+/* --------------------------------------------
+   Base Button
+   -------------------------------------------- */
 .button {
   display: flex;
   align-items: center;
@@ -10,7 +17,15 @@
   font-family: inherit;
 }
 
-/* Close button variant */
+.button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --------------------------------------------
+   Close Button Variant
+   Circular button with X icon for closing dialogs/modals
+   -------------------------------------------- */
 .button--close {
   width: 36px;
   height: 36px;
@@ -23,12 +38,12 @@
 }
 
 .button--close:hover {
-  color: #f92d03;
-  outline: 2px solid #f92d03;
+  color: #87329F;
+  outline: 2px solid #87329F;
 }
 
 .button--close:focus-visible {
-  outline: 2px solid #f92d03;
+  outline: 2px solid #87329F;
   outline-offset: 3px;
   border-radius: 9999px;
 }
@@ -37,7 +52,15 @@
   transform: scale(0.95);
 }
 
-/* Social button variant */
+.button--close svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* --------------------------------------------
+   Social Button Variant
+   Circular button for social media links
+   -------------------------------------------- */
 .button--social {
   width: 44px;
   height: 44px;
@@ -47,13 +70,13 @@
 }
 
 .button--social:hover {
-  border-color: #f92d03;
-  color: #f92d03;
+  border-color: #87329F;
+  color: #87329F;
   transform: translateY(-2px);
 }
 
 .button--social:focus-visible {
-  outline: 2px solid #f92d03;
+  outline: 2px solid #87329F;
   outline-offset: 3px;
 }
 
@@ -61,12 +84,15 @@
   transform: scale(0.95);
 }
 
-/* Primary button variant */
+/* --------------------------------------------
+   Primary Button Variant
+   Main call-to-action button with filled background
+   -------------------------------------------- */
 .button--primary {
   padding: 0.5rem 1rem;
-  border: 1px solid #f92d03;
+  border: 1px solid #87329F;
   border-radius: 4px;
-  background: #f92d03;
+  background: #87329F;
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 500;
@@ -78,7 +104,7 @@
 }
 
 .button--primary:focus-visible {
-  outline: 2px solid #f92d03;
+  outline: 2px solid #87329F;
   outline-offset: 3px;
   background: #e01f00;
   border-color: #e01f00;
@@ -86,14 +112,4 @@
 
 .button--primary:active {
   transform: scale(0.95);
-}
-
-.button svg {
-  width: 20px;
-  height: 20px;
-}
-
-.button--close svg {
-  width: 24px;
-  height: 24px;
 }
