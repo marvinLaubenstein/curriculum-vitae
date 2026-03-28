@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: var(--spacing-xl);
   flex-wrap: wrap;
 }
 
@@ -50,7 +50,7 @@
 
 .cookie-popup-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--spacing-md);
   flex-shrink: 0;
 }
 
@@ -65,9 +65,9 @@
 }
 
 .cookie-popup-btn-accept {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
 }
 
 .cookie-popup-btn-accept:hover {
@@ -76,9 +76,9 @@
 
 .cookie-popup-btn-decline {
   background: transparent;
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .cookie-popup-btn-decline:hover {
-  background: var(--border);
+  background: var(--color-border);
 }

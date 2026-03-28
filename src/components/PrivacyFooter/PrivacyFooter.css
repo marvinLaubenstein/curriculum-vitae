@@ -1,19 +1,19 @@
 .privacy-footer {
   padding: 1rem 1rem;
   text-align: center;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
   z-index: 998;
   width: 100%;
   box-sizing: border-box;
 }
 
 .privacy-footer-legal {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 .privacy-footer-legal a {
-  color: var(--text);
+  color: var(--color-text);
   text-decoration: none;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   opacity: 1;
@@ -76,8 +76,14 @@
 }
 
 .privacy-footer-divider {
-  margin: 0 0.75rem;
-  color: var(--border);
+  margin: 0 var(--spacing-md);
+  color: var(--color-border);
+}
+
+.privacy-footer-legal-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
 }
 
 .privacy-footer-legal-content a {
@@ -133,8 +139,8 @@
 
 .privacy-footer-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: var(--spacing-lg);
+  right: var(--spacing-xl);
   font-size: 1.5rem;
   background: #fff;
   border: none;
@@ -168,8 +174,8 @@
 }
 
 .privacy-footer-modal h2 {
-  margin-bottom: 1.5rem;
-  padding-right: 2rem;
+  margin-bottom: var(--spacing-xl);
+  padding-right: var(--spacing-2xl);
 }
 
 .privacy-footer-legal-content h3 {
@@ -186,11 +192,11 @@
 .privacy-footer-legal-content h4 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-h);
-  margin: 1rem 0 0.5rem;
+  color: var(--color-text);
+  margin: var(--spacing-lg) 0 var(--spacing-sm);
 }
 
 .privacy-footer-legal-content p {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-md);
   line-height: 1.6;
 }
